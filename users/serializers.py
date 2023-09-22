@@ -9,7 +9,6 @@ class UserLessonAccessSerializer(serializers.ModelSerializer):
     lesson_duration_seconds = serializers.ReadOnlyField(
         source="lesson.duration_seconds"
     )
-    viewed = serializers.ReadOnlyField()
 
     class Meta:
         model = UserLessonAccess
@@ -20,3 +19,10 @@ class UserLessonAccessSerializer(serializers.ModelSerializer):
             "view_time_seconds",
             "viewed",
         )
+
+
+class UserLessonAccessWithDateSerializer(UserLessonAccessSerializer):
+    last_viewed_date = serializers.DateTimeField(read_only=True)
+
+    class Meta(UserLessonAccessSerializer.Meta):
+        fields = UserLessonAccessSerializer.Meta.fields + ("last_viewed_date",)

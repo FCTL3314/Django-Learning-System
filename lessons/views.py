@@ -20,10 +20,12 @@ class UserLessonAccessListView(ListAPIView):
 
 
 class ProductLessonsAccessListView(ListAPIView):
+    model = UserLessonAccess
     serializer_class = UserLessonAccessWithDateSerializer
+    permission_classes = (IsAuthenticated,)
     pagination_class = UserLessonAccessPageNumberPagination
 
     def get_queryset(self):
-        return UserLessonAccess.objects.filter(
+        return self.model.objects.filter(
             user=self.request.user, lesson__products__id=self.kwargs["product_id"]
         )

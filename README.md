@@ -13,6 +13,8 @@ The project provides the following endpoints:
  
 Database diagram: https://dbdiagram.io/d/Django-Learning-System-650d5ac8ffbf5169f04c0438
 
+For the convenience of testing, the project has an admin panel.
+
 > The project was created as a test task.
 
 # 💽 Installation

@@ -1,3 +1,9 @@
 from django.contrib import admin
 
-# Register your models here.
+from users.models import UserLessonAccess
+
+
+@admin.register(UserLessonAccess)
+class UserLessonAccessAdmin(admin.ModelAdmin):
+    search_fields = ("lesson__name",)
+    ordering = ("lesson__name",)

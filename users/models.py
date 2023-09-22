@@ -13,4 +13,8 @@ class UserLessonAccess(models.Model):
 
     @property
     def viewed(self) -> bool:
+        """
+        Returns True if 80% of the video is watched,
+        otherwise False.
+        """
         return self.view_time_seconds >= 0.8 * self.lesson.duration_seconds

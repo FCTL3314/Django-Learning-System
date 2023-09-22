@@ -9,6 +9,7 @@ packages = [{include = "django_learning_system"}]
 [tool.poetry.dependencies]
 python = "^3.11"
 django-rest-framework = "^0.1.0"
+djangorestframework-simplejwt = "^5.3.0"
 
 
 [tool.poetry.group.dev.dependencies]

@@ -10,6 +10,8 @@ The project provides the following endpoints:
   * /lessons/product/1/
 * Statistics for each product:
   * /products/statistics/
+ 
+Database diagram: https://dbdiagram.io/d/Django-Learning-System-650d5ac8ffbf5169f04c0438
 
 > The project was created as a test task.
 
